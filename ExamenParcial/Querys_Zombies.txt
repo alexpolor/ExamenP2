@@ -1,0 +1,37 @@
+INSERT INTO zombie(nombre_zombie)
+VALUES ('Alejandro Rivero'),
+('Eduardo Juarez'),
+('Ricardo Cortes'),
+('Fer Polo'),
+('Maria Rivero'),
+('Daniel Perez'),
+('Laura Gi'),
+('Julio Aleman'),
+('David Polo');
+
+INSERT INTO estado(nombre_estado)
+VALUES ('Infección'),
+('Desorientación'),
+('Violencia'),
+('Desmayo'),
+('Transformación');
+
+INSERT INTO zombie_estado(id_zombie,id_estado)
+VALUES (1,5),
+(5,2),
+(1,1),
+(5,3),
+(6,5),
+(9,3),
+(5,2);
+
+ALTER TABLE estado AUTO_INCREMENT = 0;
+-------------------------------------------------
+SELECT id ,nombre_zombie, nombre_estado, fecha_registro
+from zombie_estado ZE,zombie z,estado e
+WHERE ZE.id_zombie=z.id_zombie
+and ZE.id_estado=e.id_estado
+ORDER by fecha_registro DESC;
+
+
+SELECT id ,nombre_zombie, nombre_estado, fecha_registro from zombie_estado ZE,zombie z,estado e WHERE ZE.id_zombie=z.id_zombie and ZE.id_estado=e.id_estado ORDER by fecha_registro DESC;

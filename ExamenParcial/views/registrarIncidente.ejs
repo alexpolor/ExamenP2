@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="container d-flex align-items-center justify-content-center py-3">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <title>Registro Usuario</title>
+</head>
+
+<body>
+  <div class="container row">
+    <div class="col-sm-6 offset-sm-6">
+      <h1>Registrar Incidente</h1>
+
+    </div>
+  </div>
+
+  <main class="container d-flex align-items-center justify-content-center py-4">
+
+
+    <div class="container">
+      <br>
+      <form action="/zombies" method="POST">
+        
+
+        
+
+        <!-- Apartado Rol -->
+        <div class="mb-4 row align-items-center">
+          <label for="lastNameUser" class="col-sm-1 offset-sm-3 col-form-label">Seleccione Zombie</label>
+          <div class="col-sm-5">
+            <select class="form-select" name="id_lugar" required>
+              <option selected>Seleccione nombre</option>
+              <% for (let nombre of nombres) { %>
+                <option value="<%= nombre.id_nombre %>"><%= nombre.nombre_zombie %> </option>
+                <% } %>
+            </select>
+          </div>
+        </div>
+
+        <!-- Apartado Rol -->
+        <div class="mb-4 row align-items-center">
+          <label for="lastNameUser" class="col-sm-1 offset-sm-3 col-form-label">Estado</label>
+          <div class="col-sm-5">
+            <select class="form-select" name="id_incidente" required>
+              <option selected>Seleccione Estado</option>
+              <% for (let estado of estados) { %>
+                <option value="<%= estado.id_estado %>"><%= estado.nombre_estado %> </option>
+                <% } %>
+            </select>
+          </div>
+        </div>
+
+       
+
+      
+        
+
+        <!-- Apartado Boton Registrar -->
+        <div class="mb-4 row">
+          <div class="col-sm-1 offset-sm-5">
+            <button class="btn btn-info" type="submit">Registrar</button>
+          </div>
+          <!-- Apartado Boton Regresar -->
+          <div class="col-sm-1">
+            <!-- <button class="btn btn-warning">Regresar</button> -->
+            <a href="http://localhost:3000/zombies" class="btn btn-warning" role="button">Regresar</a>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </main>
+
+
+  <footer class="container">
+
+  </footer>
+
+  <script src="js/Bootstrap5/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
