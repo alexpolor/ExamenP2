@@ -31,10 +31,10 @@
         <div class="mb-4 row align-items-center">
           <label for="lastNameUser" class="col-sm-1 offset-sm-3 col-form-label">Seleccione Zombie</label>
           <div class="col-sm-5">
-            <select class="form-select" name="id_lugar" required>
+            <select class="form-select" name="id_zombie" required>
               <option selected>Seleccione nombre</option>
               <% for (let nombre of nombres) { %>
-                <option value="<%= nombre.id_nombre %>"><%= nombre.nombre_zombie %> </option>
+                <option value="<%= nombre.id_zombie %>"><%= nombre.nombre_zombie %> </option>
                 <% } %>
             </select>
           </div>
@@ -44,7 +44,7 @@
         <div class="mb-4 row align-items-center">
           <label for="lastNameUser" class="col-sm-1 offset-sm-3 col-form-label">Estado</label>
           <div class="col-sm-5">
-            <select class="form-select" name="id_incidente" required>
+            <select class="form-select" name="id_estado" required>
               <option selected>Seleccione Estado</option>
               <% for (let estado of estados) { %>
                 <option value="<%= estado.id_estado %>"><%= estado.nombre_estado %> </option>

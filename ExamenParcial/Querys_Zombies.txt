@@ -35,3 +35,25 @@ ORDER by fecha_registro DESC;
 
 
 SELECT id ,nombre_zombie, nombre_estado, fecha_registro from zombie_estado ZE,zombie z,estado e WHERE ZE.id_zombie=z.id_zombie and ZE.id_estado=e.id_estado ORDER by fecha_registro DESC;
+
+---------------------------Formato en fecha---------------------------------------------------------
+SELECT id ,nombre_zombie, nombre_estado, DATE_FORMAT(fecha_registro, "%d/%m/%Y") as fecha_registro
+from zombie_estado ZE,zombie z,estado e
+WHERE ZE.id_zombie=z.id_zombie
+and ZE.id_estado=e.id_estado
+ORDER by fecha_registro DESC;
+
+SELECT id ,nombre_zombie, nombre_estado, DATE_FORMAT(fecha_registro, "%d/%m/%Y") as fecha_registro from zombie_estado ZE,zombie z,estado e WHERE ZE.id_zombie=z.id_zombie and ZE.id_estado=e.id_estado ORDER by fecha_registro DESC;
+
+----------------------Formato fechas y horas---------------------------
+SELECT id ,nombre_zombie, nombre_estado, DATE_FORMAT(fecha_registro, "%d/%m/%Y") as fecha_registro, DATE_FORMAT(fecha_registro, "%h:%m:%s") as hora_registro
+from zombie_estado ZE,zombie z,estado e
+WHERE ZE.id_zombie=z.id_zombie
+and ZE.id_estado=e.id_estado
+ORDER by fecha_registro DESC, hora_registro DESC;
+
+SELECT id ,nombre_zombie, nombre_estado, DATE_FORMAT(fecha_registro, "%d/%m/%Y") as fecha_registro, DATE_FORMAT(fecha_registro, "%h:%m:%s") as hora_registro from zombie_estado ZE,zombie z,estado e WHERE ZE.id_zombie=z.id_zombie and ZE.id_estado=e.id_estado ORDER by fecha_registro DESC, hora_registro DESC;
+
+
+------------Contar Zombies-------------------
+SELECT COUNT(id_zombie) as totalZombies FROM zombie
